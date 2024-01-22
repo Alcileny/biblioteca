@@ -5,14 +5,17 @@ public class Livro {
     private String Autor;
     private LocalDate publicacao; 
     private Categoria categoria;
+    
 
+   
     public Livro(String nome, String autor, LocalDate publicacao, Categoria categoria) {
         this.Nome = nome;
         this.Autor = autor;
         this.publicacao = publicacao;
         this.categoria = categoria;
+    
     }
-
+   
 
 public void exibirlivro () {
     System.out.println(" Nome:" + Nome);
@@ -61,5 +64,16 @@ public Categoria getCategoria() {
 
 public void setCategoria(Categoria categoria) {
     this.categoria = categoria;
+}
+
+
+public boolean isEmprestado() {
+    throw new UnsupportedOperationException("Unimplemented method 'isEmprestado'");
+}
+
+
+public void realizarEmprestimo() {
+    
+    throw new UnsupportedOperationException("Unimplemented method 'realizarEmprestimo'");
 }
 }

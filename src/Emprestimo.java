@@ -11,9 +11,18 @@
         this.dataEmprestimo = dataEmprestimo;
         this.dataDevolucao = dataDevolucao;
      }
-      public  void RealizarEmprestimo() {
-
-      }
+     public void realizarEmprestimo() {
+        if (!livro.isEmprestado()) {
+            livro.realizarEmprestimo();
+            dataEmprestimo = LocalDate.now();
+            dataDevolucao = dataEmprestimo.plus(30, java.time.temporal.ChronoUnit.DAYS);
+            System.out.println("Empréstimo realizado com sucesso!");
+            System.out.println("Data de Empréstimo: " + dataEmprestimo);
+            System.out.println("Data de Devolução: " + dataDevolucao);
+        } else {
+            System.out.println("Livro já emprestado. Empréstimo não realizado.");
+        }
+    }
     public Livro getLivro() {
         return livro;
     }
